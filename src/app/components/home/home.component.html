@@ -1,0 +1,17 @@
+<div class="row container-home d-flex justify-content-around align-items-center w-100" *ngIf="isUserLogged">
+  <div class="col-4 container-description">
+    <h2 class="row title mb-3">Welcome to Reask</h2>
+    <span class="row description">The place where you can find answer to all of your questions<br/>
+      This place was specially designed for this kind of work. Thousands of users use Reask.<br/>
+      Come on in, take a look and enjoy yourself!</span>
+  </div>
+  <div class="col-3 container-image-home">
+    <img class="w-100" src="./assets/img/home-image.png" alt="">
+  </div>
+</div>
+
+<!-- If user is logged -->
+<div class="container-user-home d-flex align-items-center justify-content-center" *ngIf="!isUserLogged">
+  <div class="user-options"></div>
+  <app-list-post></app-list-post>
+</div>

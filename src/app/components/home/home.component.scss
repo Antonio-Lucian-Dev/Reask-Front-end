@@ -1,0 +1,41 @@
+@import '/src/color-palete.scss';
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+.container-home {
+  margin-top: 13%;
+}
+
+.title {
+  color: $white;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 600;
+}
+
+.description {
+  color: $white;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 300;
+  line-height: 32px;
+}
+
+@media only screen and (max-width: 600px) {
+  .container-home {
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  .container-description {
+    max-width: 100%;
+  }
+
+  .container-image-home {
+    max-width: 100%;
+    margin-top: 25%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .container-image-home {
+    margin-bottom: 20px;
+  }
+}
