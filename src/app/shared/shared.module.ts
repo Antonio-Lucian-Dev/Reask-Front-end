@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -15,8 +16,10 @@ import {MatIconModule} from '@angular/material/icon';
   imports: [
     CommonModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
-  exports: [ListPostComponent, SinglePostComponent],
+  exports: [ListPostComponent, SinglePostComponent, MatIconModule, ReactiveFormsModule, FormsModule],
 })
 export class SharedModule { }

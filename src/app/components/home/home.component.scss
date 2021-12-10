@@ -34,6 +34,41 @@
   }
 }
 
+.user-options {
+  margin-top: 10%;
+  margin-bottom: 5%;
+}
+
+.user-options mat-icon {
+  color: $white;
+  font-size: 35px;
+  transform: translate(-13%, 28%);
+}
+
+.user-options .create-post {
+  background: $white;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  cursor: pointer;
+  mat-icon {
+    color: $black!important;
+  }
+}
+
+.user-options .create-category:hover {
+  background-color: #4A4A4A;
+}
+
+.user-options .create-category {
+  border: 1px solid $white;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  transition: .5s;
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 320px) {
   .container-image-home {
     margin-bottom: 20px;

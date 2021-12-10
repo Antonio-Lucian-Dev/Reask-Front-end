@@ -11,7 +11,18 @@
 </div>
 
 <!-- If user is logged -->
-<div class="container-user-home d-flex align-items-center justify-content-center" *ngIf="!isUserLogged">
-  <div class="user-options"></div>
+<div class="container-user-home d-flex flex-column align-items-center justify-content-center" *ngIf="!isUserLogged">
+  <div class="user-options d-flex align-items-center">
+    <div class="create-post mr-5 d-flex justify-content-center">
+      <mat-icon class="material-icons-outlined">
+        post_add
+      </mat-icon>
+    </div>
+    <div class="create-category d-flex justify-content-center">
+      <mat-icon class="material-icons-outlined">
+        speaker_notes
+      </mat-icon>
+    </div>
+  </div>
   <app-list-post></app-list-post>
 </div>
