@@ -1,36 +1,38 @@
-<mat-card class="container-post d-flex align-items-center">
-  <div class="d-flex flex-column col-5">
-    <h2>Title</h2>
-    <span>Description</span>
-    <div class="user-option">
-      <div class="like">
-        <span class="material-icons-outlined">
-          thumb_up
-          </span>
-          <span>4</span>
-      </div>
-      <div class="dislike">
-        <span class="material-icons-outlined">
-          thumb_down
-          </span>
-          <span>3</span>
-      </div>
-      <div class="message">
-        <span class="material-icons-outlined">
-          chat_bubble
-          </span>
-          <span>6</span>
+<mat-card class="container-post d-flex flex-column">
+  <div class="d-flex align-items-start justify-content-between">
+    <div class="container-info d-flex flex-column justify-content-center col-8">
+      <span class="mb-4">Short title</span>
+      <span class="mb-3">Description of the question for the answer</span>
+    </div>
+    <div class="info-user">
+      <span>Posted by <span class="user-name">Andrew</span></span>
+      <div class="time d-flex align-items-center">
+        <mat-icon class="material-icons-outlined">
+          schedule
+        </mat-icon>
+        <span class="post-hours">23 hours ago</span>
       </div>
     </div>
   </div>
-  <div class="d-flex flex-column col-4">
-    <div class="info-user">
-      <h2>Posted by <span class="user-name">Andrew</span></h2>
-      <div class="time">
-        <span class="material-icons-outlined">
-          schedule
-          </span>
-          <span>23 hours ago</span>
+  <div class="user-option d-flex align-items-center justify-content-between">
+    <div class="container-icon d-flex align-items-center col-8">
+      <div class="like d-flex align-items-center mr-3">
+        <mat-icon class="material-icons-outlined">
+          thumb_up
+        </mat-icon>
+        <span class="ml-2">4</span>
+      </div>
+      <div class="dislike d-flex align-items-center mr-3">
+        <mat-icon class="material-icons-outlined">
+          thumb_down
+        </mat-icon>
+        <span class="ml-2">3</span>
+      </div>
+      <div class="message d-flex align-items-center">
+        <mat-icon class="material-icons-outlined">
+          chat_bubble
+        </mat-icon>
+        <span class="ml-2">6</span>
       </div>
     </div>
     <button type="button" class="btn btn-primary">Read post</button>

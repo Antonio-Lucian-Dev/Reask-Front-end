@@ -3,6 +3,7 @@ import { ListPostComponent } from './../components/post/list-post/list-post.comp
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
 
 
 
@@ -13,7 +14,8 @@ import {MatCardModule} from '@angular/material/card';
   ],
   imports: [
     CommonModule,
-    MatCardModule
+    MatCardModule,
+    MatIconModule
   ],
   exports: [ListPostComponent, SinglePostComponent],
 })

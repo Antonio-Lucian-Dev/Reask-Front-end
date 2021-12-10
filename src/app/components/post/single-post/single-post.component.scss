@@ -3,7 +3,31 @@
 
 .container-post {
   background-color: $black-simple;
+  margin-top: 70%;
   h2, span {
     color: $white;
   }
+}
+
+.user-option mat-icon {
+  color: $white;
+  cursor: pointer;
+}
+
+.info-user mat-icon {
+  color: $white;
+}
+
+.info-user mat-icon {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.info-user .post-hours {
+  font-size: 12px;
+}
+
+.info-user .user-name {
+  color: $blue;
 }
