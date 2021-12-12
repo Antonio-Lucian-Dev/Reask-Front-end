@@ -17,16 +17,25 @@
   <mat-accordion class="mb-4">
     <mat-expansion-panel class="container-comment" [expanded]="panelOpenState">
       <div class="d-flex align-items-center" *ngFor="let comment of comments">
-        <div class="comment d-flex justify-content-start align-items-center">
+        <div class="comment mt-3 mb-3 d-flex justify-content-start align-items-center">
           <div class="username mr-3">
-            <a routerLink="/user/comment.username">{{comment.username}}</a>
+            <img class="account-icon mr-2" src="https://www.redditstatic.com/avatars/avatar_default_08_D4E815.png">
+            <a routerLink="/user/comment.username">{{comment.userName}}</a>
           </div>
           <div class="mr-3">
-            <span>{{comment.duration}}</span>
+            <span>{{comment.createdDate}}</span>
           </div>
           <b>{{comment.text}}</b>
         </div>
         <hr />
+      </div>
+      <div class="add-comment-section">
+        <form [formGroup]="commentForm" (ngSubmit)="postComment()">
+          <div class="form-group">
+            <textarea class="form-control mt-3" [formControlName]="'text'" placeholder="Your Thoughts?"></textarea>
+          </div>
+          <button type="submit" class="login float-right btn btn-success mb-3">Comment</button>
+        </form>
       </div>
     </mat-expansion-panel>
   </mat-accordion>

@@ -33,7 +33,7 @@ export class CreatePostComponent implements OnInit {
     private postService: PostService,
     private router: Router,
     private categoryService: CategoryService
-    ) {
+  ) {
     this.postPayload = {
       postName: '',
       url: '',

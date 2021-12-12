@@ -50,3 +50,17 @@
   font-family: 'Titillium Web', sans-serif;
   font-weight: 300;
 }
+
+.account-icon{
+  border-radius: 4px;
+  float: left;
+  margin-right: 5px;
+  max-height: 24px;
+  max-width: 24px;
+}
+
+form textarea {
+  background-color: $black-simple;
+  color: $white;
+  border: 0;
+}
