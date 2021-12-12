@@ -1,14 +1,31 @@
 <div class="d-flex flex-column justify-content-center align-items-center container-post">
   <h2 class="title">Create Post</h2>
-  <form [formGroup]="categoryForm" (ngSubmit)="createCategory()" class="w-100">
+  <form [formGroup]="postForm" (ngSubmit)="createPost()" class="w-100">
     <div class="form-group row d-flex flex-column align-items-center mb-4">
       <label for="title" class="col-md-8 col-form-label text-md-left">Title*</label>
       <div class="col-md-8">
         <input type="text" id="title" class="form-control" formControlName="title" name="title" required autofocus
           placeholder="Ex..Problem with..">
-        <span class="message-warning" *ngIf="!categoryForm.get('title').valid && categoryForm.get('title').touched">
+        <span class="message-warning" *ngIf="!postForm.get('title').valid && postForm.get('title').touched">
           Please provide a title
         </span>
+      </div>
+    </div>
+    <div class="form-group row d-flex flex-column align-items-center mb-4">
+      <label for="url" class="col-md-8 col-form-label text-md-left">Url</label>
+      <div class="col-md-8">
+        <input type="url" id="url" class="form-control" formControlName="url" name="url">
+      </div>
+    </div>
+
+    <div class="form-group row d-flex flex-column align-items-center mb-4">
+      <div class="col-md-8">
+        <mat-form-field class="select-category w-100" appearance="fill">
+          <mat-label class="category-label">Category</mat-label>
+          <mat-select matInput formControlName="category">
+            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+          </mat-select>
+        </mat-form-field>
       </div>
     </div>
 

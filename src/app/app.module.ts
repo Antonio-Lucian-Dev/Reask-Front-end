@@ -9,6 +9,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { LoginComponent } from './auth/login/login.component';
+import { CreatePostComponent } from './components/post/create-post/create-post.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NgxWebstorageModule } from 'ngx-webstorage';
+import { ToastrModule } from 'ngx-toastr';
+import {MatSelectModule} from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -16,15 +24,23 @@ import { LoginComponent } from './auth/login/login.component';
     NavBarComponent,
     SignUpComponent,
     LoginComponent,
+    CreatePostComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     SharedModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    NgxWebstorageModule.forRoot(),
+    ToastrModule.forRoot(),
+    MatSelectModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

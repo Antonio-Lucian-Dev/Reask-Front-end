@@ -1,0 +1,58 @@
+@import '/src/color-palete.scss';
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+.login-section{
+  margin: 100px;
+}
+
+.container-login {
+  background-color: $black-simple;
+}
+
+.title {
+  color: $white;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 600;
+}
+
+.col-form-label {
+  color: $white;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 300;
+}
+
+.message-new-user {
+  color: $white;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 300;
+}
+
+.signup-message {
+  color: $blue;
+  cursor: pointer;
+}
+
+.login-failed, .register-success{
+  text-align: center;
+  margin: auto;
+  margin-top: 10px;
+  border: 2px solid black;
+  width: 65%;
+  background-color: red;
+}
+
+.login-failed-text, .register-success-text{
+  text-align: center;
+  margin-top: 5px;
+  font-weight: bold;
+  color: aliceblue;
+}
+
+.message-warning {
+  color: $white;
+}
+
+.login {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 300;
+}

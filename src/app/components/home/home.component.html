@@ -14,15 +14,20 @@
 <div class="container-user-home d-flex flex-column align-items-center justify-content-center" *ngIf="!isUserLogged">
   <div class="user-options d-flex align-items-center">
     <div class="create-post mr-5 d-flex justify-content-center">
-      <mat-icon class="material-icons-outlined">
+      <mat-icon class="material-icons-outlined" (click)="openDialog()">
         post_add
       </mat-icon>
     </div>
-    <div class="create-category d-flex justify-content-center">
+    <div class="list-post mr-5 d-flex justify-content-center" routerLink="/" routerLinkActive="active">
+      <mat-icon class="material-icons-outlined">
+        wysiwyg
+      </mat-icon>
+    </div>
+    <div class="create-category d-flex justify-content-center" routerLink="/home/list-category" routerLinkActive="active">
       <mat-icon class="material-icons-outlined">
         speaker_notes
       </mat-icon>
     </div>
   </div>
-  <app-list-post></app-list-post>
+  <app-list-post [posts]="posts"></app-list-post>
 </div>

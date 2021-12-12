@@ -24,11 +24,11 @@ export class AuthService {
   }
 
   signup(signupRequestPayload: SignupRequestPayload): Observable<any> {
-    return this.httpClient.post('https://blooming-dusk-26787.herokuapp.com/api/auth/signup', signupRequestPayload, { responseType: 'text' });
+    return this.httpClient.post('http://localhost:9792/api/auth/signup', signupRequestPayload, { responseType: 'text' });
   }
 
   login(loginRequestPayload: LoginRequestPayload): Observable<boolean> {
-    return this.httpClient.post<LoginResponse>('https://blooming-dusk-26787.herokuapp.com/api/auth/login',
+    return this.httpClient.post<LoginResponse>('http://localhost:9792/api/auth/login',
       loginRequestPayload).pipe(map(data => {
         this.localStorage.store('authenticationToken', data.authenticationToken);
         this.localStorage.store('username', data.username);
@@ -46,7 +46,7 @@ export class AuthService {
   }
 
   refreshToken() {
-    return this.httpClient.post<LoginResponse>('https://blooming-dusk-26787.herokuapp.com/api/auth/refresh/token',
+    return this.httpClient.post<LoginResponse>('http://localhost:9792/api/auth/refresh/token',
       this.refreshTokenPayload)
       .pipe(tap(response => {
         this.localStorage.clear('authenticationToken');
@@ -59,7 +59,7 @@ export class AuthService {
   }
 
   logout() {
-    this.httpClient.post('https://blooming-dusk-26787.herokuapp.com/api/auth/logout', this.refreshTokenPayload,
+    this.httpClient.post('http://localhost:9792/api/auth/logout', this.refreshTokenPayload,
       { responseType: 'text' })
       .subscribe(data => {
         console.log(data);

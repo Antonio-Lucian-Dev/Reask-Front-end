@@ -1,8 +1,19 @@
 <div class="d-flex align-items-center justify-content-between mt-3 pr-4 pl-4">
   <span class="logo">Reask</span>
-  <div class="user-not-registered d-flex align-items-center justify-content-around">
-    <button type="button" class="btn btn-outline-light mr-3">Sign Up</button>
-    <button type="button" class="btn btn-primary">Log In</button>
+  <div class="user-not-registered d-flex align-items-center justify-content-around" *ngIf="!isLoggedIn">
+    <button type="button" routerLink="/signup" class="btn btn-outline-light mr-3">Sign Up</button>
+    <button type="button" routerLink="/login" class="btn btn-primary">Log In</button>
   </div>
-  <!--div class="user-registered"></div -->
+  <div class="user-registered">
+    <div *ngIf="isLoggedIn" ngbDropdown class="float-right">
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button (click)="goToUserProfile()" ngbDropdownItem>Profile</button>
+          <button (click)="logout()" ngbDropdownItem>Logout</button>
+      </div>
+      <button class="userdetails" id="dropdownBasic1" ngbDropdownToggle>
+          <img class="account-icon" src="https://www.redditstatic.com/avatars/avatar_default_08_D4E815.png">
+          {{username}}
+      </button>
+  </div>
+  </div>
 </div>

@@ -38,6 +38,7 @@ $Reask-theme: mat.define-light-theme((
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import '/src/color-palete.scss';
 
 $black: #1D1D1D;
 
@@ -49,3 +50,43 @@ body {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+mat-dialog-container {
+  background-color: $black-simple!important;
+  overflow: none!important;
+}
+
+.select-category {
+  .category-label {
+    color: $white!important;
+  }
+  .mat-select-value-text  {
+    color: $white!important;
+  }
+  .mat-form-field-underline::before {
+    background-color: $white!important;
+  }
+  .mat-placeholder-required {
+    color: $white;
+  }
+  .mat-select-arrow {
+    color: $white!important;
+  }
+}
+
+textarea {
+  color: $white!important;
+}
+
+.mat-form-field-infix  {
+  .mat-form-field-label {
+    color: $white!important;
+  }
+}
+
+.container-description {
+  // transform: translate(-10%, 0);
+  .mat-form-field-wrapper {
+    width: 100% !important;
+  }
+}
