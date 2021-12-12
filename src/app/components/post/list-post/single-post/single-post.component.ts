@@ -1,4 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { throwError } from 'rxjs';
+import { CommentPayload } from 'src/app/shared/comment/comment.payload';
+import { CommentService } from 'src/app/shared/comment/comment.service';
 
 @Component({
   selector: 'app-single-post',
@@ -8,10 +11,28 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SinglePostComponent implements OnInit {
 
   @Input() postData: any;
+  panelOpenState = false;
+  comments: CommentPayload[] = [
+    {text: "fd", postId: 1, username: 'gfg', duration: '455'},
+    {text: "fd", postId: 1, username: 'gfg', duration: '455'}
+  ];
 
-  constructor() { }
+  constructor(private commentService: CommentService) { }
 
   ngOnInit(): void {
+    console.log(this.postData)
+  }
+
+  togglePanel(): void {
+    this.panelOpenState = !this.panelOpenState
+  }
+
+  private getCommentsForPost() {
+    this.commentService.getAllCommentsForPost(this.postData.id).subscribe(data => {
+      this.comments = data;
+    }, error => {
+      throwError(error);
+    });
   }
 
 }

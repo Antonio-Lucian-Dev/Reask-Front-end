@@ -1,0 +1,28 @@
+@import '/src/color-palete.scss';
+
+.add-category {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid $white;
+  transition: .5s;
+}
+
+.post {
+  width: 7%;
+  background-color: $black-simple;
+}
+
+.container-post mat-icon {
+  color: $white;
+  font-size: 35px;
+  transform: translate(-21%, 28%);
+}
+
+.category-name {
+  text-align: center;
+  color: $white;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+}

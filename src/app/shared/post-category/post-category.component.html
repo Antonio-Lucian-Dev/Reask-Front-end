@@ -1,11 +1,11 @@
 <div class="d-flex flex-column justify-content-center align-items-center container-post">
-  <h2 class="title">Create Post</h2>
+  <h2 class="title mb-5">Create Category</h2>
   <form [formGroup]="categoryForm" (ngSubmit)="createCategory()" class="w-100">
     <div class="form-group row d-flex flex-column align-items-center mb-4">
       <label for="title" class="col-md-8 col-form-label text-md-left">Title*</label>
       <div class="col-md-8">
         <input type="text" id="title" class="form-control" formControlName="title" name="title" required autofocus
-          placeholder="Ex..Problem with..">
+          placeholder="Ex..Post">
         <span class="message-warning" *ngIf="!categoryForm.get('title').valid && categoryForm.get('title').touched">
           Please provide a title
         </span>

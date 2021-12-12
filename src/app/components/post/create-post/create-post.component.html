@@ -23,7 +23,7 @@
         <mat-form-field class="select-category w-100" appearance="fill">
           <mat-label class="category-label">Category</mat-label>
           <mat-select matInput formControlName="category">
-            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+            <mat-option *ngFor="let category of categories" [value]="category.name">{{category.name}}</mat-option>
           </mat-select>
         </mat-form-field>
       </div>

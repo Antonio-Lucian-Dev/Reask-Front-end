@@ -1,7 +1,10 @@
-<mat-card class="container-post d-flex flex-column mb-5" *ngFor="let category of categories">
-  <div class="d-flex align-items-start justify-content-between">
-    <div class="container-info d-flex flex-column justify-content-center col-8">
-      <span class="mb-4">{{category.name}}</span>
-    </div>
+<div class="container-post d-flex flex-column align-items-center mb-5">
+  <div class="row add-category d-flex justify-content-center mb-5">
+    <mat-icon class="material-icons-outlined" (click)="openDialog()">
+      add
+    </mat-icon>
   </div>
-</mat-card>
+  <mat-card class="post d-flex flex-column mb-5" *ngFor="let category of categories">
+    <span class="category-name">{{category.name}}</span>
+  </mat-card>
+</div>

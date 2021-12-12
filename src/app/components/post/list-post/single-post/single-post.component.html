@@ -1,21 +1,37 @@
 <mat-card class="container-post d-flex flex-column mb-5">
   <div class="d-flex align-items-start justify-content-between">
-    <div class="container-info d-flex flex-column justify-content-center col-8">
-      <span class="mb-4">Short title</span>
-      <span class="mb-3">Description of the question for the answer</span>
+    <div class="container-info d-flex flex-column justify-content-center col-7">
+      <span class="mb-4">{{postData.postName}}</span>
+      <span class="mb-3">{{postData.description}}</span>
     </div>
     <div class="info-user">
-      <span>Posted by <span class="user-name">Andrew</span></span>
+      <span>Posted by <span class="user-name">{{postData.userName}}</span></span>
       <div class="time d-flex align-items-center">
         <mat-icon class="material-icons-outlined">
           schedule
         </mat-icon>
-        <span class="post-hours">23 hours ago</span>
+        <span class="post-hours">{{postData.duration}}</span>
       </div>
     </div>
   </div>
+  <mat-accordion class="mb-4">
+    <mat-expansion-panel class="container-comment" [expanded]="panelOpenState">
+      <div class="d-flex align-items-center" *ngFor="let comment of comments">
+        <div class="comment d-flex justify-content-start align-items-center">
+          <div class="username mr-3">
+            <a routerLink="/user/comment.username">{{comment.username}}</a>
+          </div>
+          <div class="mr-3">
+            <span>{{comment.duration}}</span>
+          </div>
+          <b>{{comment.text}}</b>
+        </div>
+        <hr />
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
   <div class="user-option d-flex align-items-center justify-content-between">
-    <app-vote></app-vote>
-    <button type="button" class="btn btn-primary">Read post</button>
+    <app-vote [post]="postData"></app-vote>
+    <button type="button" class="btn btn-primary" (click)="togglePanel()">Read post</button>
   </div>
 </mat-card>

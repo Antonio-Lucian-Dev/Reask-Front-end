@@ -17,7 +17,10 @@ export class PostCategoryComponent implements OnInit {
     description: ['', Validators.required],
   });
 
-  categoryModel: CategoryModel;
+  categoryModel: CategoryModel = {
+    name: "",
+    description: ""
+  };
   errorMessage = "";
 
   constructor(private router: Router, private fb: FormBuilder, private categoryService: CategoryService) { }
@@ -28,10 +31,8 @@ export class PostCategoryComponent implements OnInit {
   createCategory() {
     console.log(this.categoryForm.valid);
     if (this.categoryForm.valid) {
-      this.categoryModel.name = this.categoryForm.get('title')
-        .value;
-      this.categoryModel.description = this.categoryForm.get('description')
-        .value;
+      this.categoryModel.name = this.categoryForm.get('title').value;
+      this.categoryModel.description = this.categoryForm.get('description').value;
       this.categoryService.createCategory(this.categoryModel).subscribe(data => {
         this.router.navigateByUrl('/list-subreddits');
       }, error => {

@@ -90,3 +90,9 @@ textarea {
     width: 100% !important;
   }
 }
+
+mat-expansion-panel {
+  .mat-expansion-panel-body {
+    padding-bottom: 0 !important;
+  }
+}

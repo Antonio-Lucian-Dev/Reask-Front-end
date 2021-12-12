@@ -16,6 +16,7 @@ import { VoteService } from '../services/vote.service';
 export class VoteComponent implements OnInit {
 
   @Input() post: PostModel;
+
   votePayload: VotePayload;
   upvoteColor: string;
   downvoteColor: string;

@@ -11,6 +11,6 @@ export class VoteService {
   constructor(private http: HttpClient) { }
 
   vote(votePayload: VotePayload): Observable<any> {
-    return this.http.post('https://blooming-dusk-26787.herokuapp.com/api/votes/', votePayload);
+    return this.http.post('http://localhost:9792/api/votes/', votePayload);
   }
 }

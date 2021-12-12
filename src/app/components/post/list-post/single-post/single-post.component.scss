@@ -3,6 +3,8 @@
 
 .container-post {
   background-color: $black-simple;
+  width: 25rem;
+
   h2, span {
     color: $white;
   }
@@ -25,4 +27,26 @@
 
 .info-user .user-name {
   color: $blue;
+}
+
+.container-comment {
+  background-color: #1D1D1D;
+}
+
+.username a {
+  color: $white;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 300;
+}
+
+.comment span {
+  color: $white;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 300;
+}
+
+.comment b {
+  color: $white;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 300;
 }

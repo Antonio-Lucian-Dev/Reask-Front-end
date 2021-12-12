@@ -10,6 +10,9 @@ import { VoteComponent } from '../components/post/vote/vote.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ListCategoryComponent } from './list-category/list-category.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 
 
@@ -30,6 +33,10 @@ import { ListCategoryComponent } from './list-category/list-category.component';
     FormsModule,
     MatDialogModule,
     MatFormFieldModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatExpansionModule
   ],
   exports: [
     ListPostComponent,

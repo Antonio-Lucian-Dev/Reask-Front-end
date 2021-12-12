@@ -10,13 +10,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { LoginComponent } from './auth/login/login.component';
 import { CreatePostComponent } from './components/post/create-post/create-post.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgxWebstorageModule } from 'ngx-webstorage';
 import { ToastrModule } from 'ngx-toastr';
 import {MatSelectModule} from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { TokenInterceptor } from './token-interceptor';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,13 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     MatFormFieldModule,
     MatInputModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
