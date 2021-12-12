@@ -19,7 +19,8 @@ import { ListCategoryComponent } from './list-category/list-category.component';
     SinglePostComponent,
     VoteComponent,
     ListCategoryComponent,
-    PostCategoryComponent
+    PostCategoryComponent,
+    ListCategoryComponent
   ],
   imports: [
     CommonModule,
@@ -38,6 +39,7 @@ import { ListCategoryComponent } from './list-category/list-category.component';
     FormsModule,
     VoteComponent,
     MatDialogModule,
+    ListCategoryComponent
   ],
 })
 export class SharedModule { }

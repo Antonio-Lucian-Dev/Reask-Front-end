@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
 
   isUserLogged = false;
   posts: Array<PostModel> = [];
+  isListPost: boolean = true;
 
   constructor(private postService: PostService, public dialog: MatDialog) { }
 

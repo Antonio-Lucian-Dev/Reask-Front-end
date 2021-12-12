@@ -10,11 +10,11 @@ export class CategoryService {
 
   constructor(private http: HttpClient) { }
 
-  getAllSubreddits(): Observable<Array<CategoryModel>> {
+  getAllCategory(): Observable<Array<CategoryModel>> {
     return this.http.get<Array<CategoryModel>>('http://localhost:9792/api/subreddit');
   }
 
-  createSubreddit(CategoryModel: CategoryModel): Observable<CategoryModel> {
+  createCategory(CategoryModel: CategoryModel): Observable<CategoryModel> {
     return this.http.post<CategoryModel>('http://localhost:9792/api/subreddit',
       CategoryModel);
   }

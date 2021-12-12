@@ -18,16 +18,17 @@
         post_add
       </mat-icon>
     </div>
-    <div class="list-post mr-5 d-flex justify-content-center" routerLink="/" routerLinkActive="active">
+    <div class="list-post mr-5 d-flex justify-content-center" [ngClass]="isListPost ? 'active' : ''" (click)="isListPost = true">
       <mat-icon class="material-icons-outlined">
         wysiwyg
       </mat-icon>
     </div>
-    <div class="create-category d-flex justify-content-center" routerLink="/home/list-category" routerLinkActive="active">
+    <div class="create-category d-flex justify-content-center" [ngClass]="!isListPost ? 'active' : ''" (click)="isListPost = false">
       <mat-icon class="material-icons-outlined">
         speaker_notes
       </mat-icon>
     </div>
   </div>
-  <app-list-post [posts]="posts"></app-list-post>
+  <app-list-post [posts]="posts" *ngIf="isListPost"></app-list-post>
+  <app-list-category *ngIf="!isListPost"></app-list-category>
 </div>

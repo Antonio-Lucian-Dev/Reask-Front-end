@@ -32,7 +32,7 @@ export class PostCategoryComponent implements OnInit {
         .value;
       this.categoryModel.description = this.categoryForm.get('description')
         .value;
-      this.categoryService.createSubreddit(this.categoryModel).subscribe(data => {
+      this.categoryService.createCategory(this.categoryModel).subscribe(data => {
         this.router.navigateByUrl('/list-subreddits');
       }, error => {
         throwError(error);
